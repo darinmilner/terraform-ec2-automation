@@ -1,0 +1,6 @@
+.ssh/
+.terraform/
+*.tfvars
+.vscode/
+*.tfstate
+*.tfstate.backup
