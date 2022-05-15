@@ -9,14 +9,14 @@ resource "aws_instance" "dev-node" {
     volume_size = 10 # 8 is default
   }
 
-  provisioner "local-exec" {
-    command = templatefile("${var.host-os}-sshconfig.tpl", {
-      hostname     = self.public_ip,
-      user         = "ubuntu",
-      identityfile = "./.ssh/mtckey"
-    })
-    interpreter = var.host-os == "windows" ? ["Powershell", "-Command"] : ["bash", "-c"]
-  }
+  # provisioner "local-exec" {
+  #   command = templatefile("${var.host-os}-sshconfig.tpl", {
+  #     hostname     = self.public_ip,
+  #     user         = "ubuntu",
+  #     identityfile = "./.ssh/mtckey"
+  #   })
+  #   interpreter = var.host-os == "windows" ? ["Powershell", "-Command"] : ["bash", "-c"]
+  # }
 
   tags = {
     Name = "dev-node"

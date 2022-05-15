@@ -1,6 +1,6 @@
 variable "host-os" {
   type    = string
-  default = "windows"
+  default = "linux-mac"
 }
 
 variable "instance-type" {
