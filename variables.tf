@@ -1,6 +1,5 @@
-variable "host-os" {
-  type    = string
-  default = "linux-mac"
+variable "host_os" {
+  type = string
 }
 
 variable "instance-type" {
@@ -16,4 +15,8 @@ variable "vpc-cidr" {
 variable "subnet-cidr" {
   type    = string
   default = "10.120.1.0/24"
+}
+
+variable "aws_region" {
+  type = string
 }

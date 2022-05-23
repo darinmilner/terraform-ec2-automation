@@ -1,10 +1,15 @@
+resource "aws_key_pair" "mtc-auth" {
+  key_name   = "mtckey"
+  public_key = file("/mnt/workspace/mtckey.pub")
+}
+
 resource "aws_instance" "dev-node" {
   instance_type          = var.instance-type
   ami                    = data.aws_ami.server_ami.id
   key_name               = aws_key_pair.mtc-auth.id
-  vpc_security_group_ids = [aws_security_group.mtc-sg.id]
-  subnet_id              = aws_subnet.mtc-public-subnet.id
-  user_data              = file("userdata.tpl")
+  vpc_security_group_ids = var.security_group_id
+  subnet_id              = var.subnet_id
+  user_data              = file("${path.module}/userdata.tpl")
   root_block_device {
     volume_size = 10 # 8 is default
   }

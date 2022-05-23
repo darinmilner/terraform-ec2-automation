@@ -11,3 +11,13 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update -y &&
 sudo sudo apt-get install docker-ce docker-ce-cli containerd.io -y &&
 sudo usermod -aG docker ubuntu
+
+# .bash_profile
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+# User specific environment and startup programs
+PATH=$PATH:$HOME/bin:~/.local/bin:/usr/local/bin
+
+source ~/.bash_profile
