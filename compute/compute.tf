@@ -4,7 +4,7 @@ resource "aws_key_pair" "mtc-auth" {
 }
 
 resource "aws_instance" "dev-node" {
-  instance_type          = var.instance-type
+  instance_type          = var.instance_type
   ami                    = data.aws_ami.server_ami.id
   key_name               = aws_key_pair.mtc-auth.id
   vpc_security_group_ids = var.security_group_id

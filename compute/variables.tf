@@ -9,3 +9,7 @@ variable "security_group_id" {
 variable "host_os" {
   type = string
 }
+
+variable "instance_type" {
+  type = string
+}

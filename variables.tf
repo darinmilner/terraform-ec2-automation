@@ -2,7 +2,7 @@ variable "host_os" {
   type = string
 }
 
-variable "instance-type" {
+variable "instance_type" {
   type    = string
   default = "t2.micro" # free tier
 }

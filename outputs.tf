@@ -1,3 +1,3 @@
-output "connection_script" {
-  value = module.compute.connection_script
+output "connection-script" {
+  value = module.compute.connection-script
 }
